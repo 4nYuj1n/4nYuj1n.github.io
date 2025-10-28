@@ -1,19 +1,19 @@
 ---
-title: "Portugese Irregular Verbs" 
-date: 1997-01-01
-tags: ["Portugese","irregular verbs","philology"]
-author: ["Moritz-Maria von Igelfeld"]
-description: "This book discusses Portugese irregular verbs in great details."
-summary: "This book discusses Portugese irregular verbs in great details."
-cover:
-    image: "book1.png"
-    alt: "Portugese Irregular Verbs"
-    relative: true
-editPost:
-    URL: "https://github.com/pmichaillat/hugo-website"
-    Text: "Regensburg University Press"
-showToc: false
-disableAnchoredHeadings: false
+title: "🦀" 
+date: 2025-10-12
+tags: ["Rev"]
+# author: ["Moritz-Maria von Igelfeld"]
+description: ""
+summary: " "
+# cover:
+#     image: "book1.png"
+#     alt: "Portugese Irregular Verbs"
+#     relative: true
+# editPost:
+#     URL: "https://github.com/pmichaillat/hugo-website"
+#     Text: "Regensburg University Press"
+showToc: true
+disableAnchoredHeadings: true
 
 ---
 
