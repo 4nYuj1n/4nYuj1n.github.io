@@ -15,24 +15,10 @@ menu:
         - name: writeups
           url: writeups/
           weight: 1
-        # - name: Papers
-        #   url: papers/
-        #   weight: 2
-        # - name: Courses
-        #   url: courses/
-        #   weight: 3
-        # - name: Data
-        #   url: data/
-        #   weight: 4 
-        # - name: Blog
-        #   url: https://en.wikipedia.org/wiki/Moritz-Maria_von_Igelfeld_(character)
-        #   weight: 6
 
 params:
     description: "Writeup and Research"
     author: AnYujin
-    # googleAnalyticsID: "G-XXXXX"
-    # DateFormat: "January 2006"
     defaultTheme: dark
     hideFooter: true
     disableThemeToggle: true
@@ -56,7 +42,7 @@ params:
           enabled: true
           title: AnYujin
           subtitle: "I do my best :)"
-          imageUrl: "yaya.jpg"
+          imageUrl: "hmm-monkey.png"
           imageWidth: 120
           imageHeight: 120
           buttons:
@@ -64,18 +50,7 @@ params:
               url: writeups/
             - name: Researches
               url: research/
-            # - name: Data
-            #   url: data/
-            # - name: Books
-            #   url: books/
-            # - name: Courses
-            #   url: courses/
-            # - name: Tags
-            #   url: tags/
-            # - name: Archive
-            #   url: archive/
-            # - name: Blog
-            #   url: https://en.wikipedia.org/wiki/Moritz-Maria_von_Igelfeld_(character)
+
 
     socialIcons:
         # - name: CV
