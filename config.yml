@@ -12,8 +12,8 @@ taxonomies:
 
 menu:
     main:
-        - name: writeups
-          url: writeups/
+        - name: AnYujin
+          url: /
           weight: 1
 
 params:

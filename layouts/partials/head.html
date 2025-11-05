@@ -31,7 +31,6 @@
     {{- with site.Params.description }}{{ . }}{{- end }}{{- end }}{{- end -}}">
 <meta name="author" content="{{ (partial "author.html" . ) }}">
 <link rel="canonical" href="{{ if .Params.canonicalURL -}} {{ trim .Params.canonicalURL " " }} {{- else -}} {{ .Permalink }} {{- end }}">
-
 {{- /* Styles */}}
 
 {{- /* includes */}}
@@ -61,8 +60,20 @@
 
 {{- /* bundle all required css */}}
 {{- /* Add extended css after theme style */ -}}
-{{- $stylesheet := (slice $license_css $core $extended) | resources.Concat "assets/css/stylesheet.css"  }}
+{{- $main_css_src := (resources.Get "css/main.css") | default (resources.FromString "css/_empty.css" "") -}}
+{{- $main_css := $main_css_src | resources.Minify -}}
 
+{{- $post_single_src := (resources.Get "css/post-single.css") | default (resources.FromString "css/_empty2.css" "") -}}
+{{- $post_single_css := $post_single_src | resources.Minify -}}
+
+    {{- $side_page_src := (resources.Get "css/core/side-page.css") | default (resources.FromString "css/_empty3.css" "") -}}
+    {{- $side_page_css := $side_page_src | resources.Minify -}}
+
+{{- $stylesheet := (slice $license_css $core $extended $main_css $post_single_css $side_page_css) | resources.Concat "assets/css/stylesheet.css" -}}
+
+
+{{- /* Final bundle: theme core + extended + your custom files (order matters; yours last) */ -}}
+{{- $stylesheet := (slice $license_css $core $extended $main_css $post_single_css $side_page_css) | resources.Concat "assets/css/stylesheet.css" }}
 {{- if not site.Params.assets.disableFingerprinting }}
 {{- $stylesheet := $stylesheet | fingerprint }}
 <link crossorigin="anonymous" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}" rel="preload stylesheet" as="style">

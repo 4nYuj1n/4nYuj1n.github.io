@@ -1,0 +1,15 @@
+{{- $parent := cond .IsSection . .CurrentSection -}}
+<nav class="side-nav" aria-label="Subpages">
+  {{- if $parent -}}
+    {{- $items := slice -}}
+    {{- $items = union $items $parent.Sections -}}
+    {{- $items = union $items $parent.RegularPages -}}
+    {{- $items = where $items "Draft" "!=" true -}}
+
+    {{- range sort $items "Date" "desc" -}}
+      <a class="side-link {{ if eq .Permalink $.Permalink }}active{{ end }}" href="{{ .RelPermalink }}">
+        {{- .Title -}}
+      </a>
+    {{- end -}}
+  {{- end -}}
+</nav>

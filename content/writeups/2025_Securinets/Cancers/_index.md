@@ -1,5 +1,5 @@
 ---
-title: "🦀" 
+title: "Cancers (🦀)" 
 date: 2025-10-12
 tags: ["Rev"]
 description: ""
