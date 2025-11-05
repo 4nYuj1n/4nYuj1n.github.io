@@ -98,7 +98,7 @@ if ( v43 )
 }
 ```
 
-in this part, our input which is `v6` will be xored to some value which is derived from `v47`, `v47` is a constant value `133720251C0DE1C0ABACADAE11223344h`, which will be used to derive the xor key along with `v43` which is the plaintext length in `sub_401580`
+in this part, our input which is `v6` will be xored to some value which is derived from `v47`, `v47` is a constant value `133720251C0DE1C0ABACADAE11223344h`, which will be used to derive the xor key in `sub_401580` along with `v43`(the plaintext length)
 
 ```
 unsigned int __fastcall sub_401580(unsigned int *a1, int a2)
@@ -151,7 +151,7 @@ unsigned int __fastcall sub_401580(unsigned int *a1, int a2)
   return result;
 }
 ```
-great, so the first part of the encryption will be deterministic to the length of the plaintext, lets now we look into the 2nd part of the encryption which will be another XOR
+great, so the first part of the encryption will be deterministic to the length of the plaintext, lets now look into the 2nd part of the encryption which will be another XOR
 
 ```
 for ( i = *(_DWORD *)((char *)&v53[-2] + (((214013 * v5 + 171715) >> 14) & 0xC)); v11; --v11 )
@@ -250,11 +250,7 @@ key = bytes.fromhex("f078177e309d2f74d32e571c3b14434ba9d9d9d90958bf208c5a4241a67
 
 key=key[:32]
 plaintext = decrypt_aes256_cbc(ct, key, iv)
-
-saved = open(f"Peta_{i_enc}",'wb+')
-saved.write(plaintext)
 fin_key = xor(plaintext,i_enc*1339)
-saved.close()
 
 need=open("flag.txt.crs.bak",'rb').read()[16:]
 need = decrypt_aes256_cbc(need, key, iv)
