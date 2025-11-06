@@ -11,7 +11,7 @@ disableAnchoredHeadings: true
 
 ---
 
-In this challenge, a ELF binary was given, during the competition lets now load it into IDA
+In this challenge, a ELF binary was given lets now load it into IDA
 
 ![alt ida](Screenshot_1.png)
 
