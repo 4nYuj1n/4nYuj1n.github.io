@@ -5,7 +5,9 @@
     {{- $items = union $items $parent.Sections -}}
     {{- $items = union $items $parent.RegularPages -}}
     {{- $items = where $items "Draft" "!=" true -}}
-
+  {{- if not .Content}}
+  <b>Table of contents</b>
+  {{- end -}}
     {{- range sort $items "Date" "desc" -}}
       <a class="side-link {{ if eq .Permalink $.Permalink }}active{{ end }}" href="{{ .RelPermalink }}">
         {{- .Title -}}
